@@ -1,8 +1,11 @@
 import csv
 import sys
+import os
+file_path= os.path.abspath(os.path.dirname(__file__))
+iedb_data_filepath= os.path.join(file_path, "../data/IEDB_data.tsv")
 
 output_map = {}
-with open("../data/IEDB_data.tsv", "r") as inf:
+with open(iedb_data_filepath, "r") as inf:
     #Skip header
     inf.readline()
     for line in inf:
